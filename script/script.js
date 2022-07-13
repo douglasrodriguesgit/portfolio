@@ -1,3 +1,4 @@
+// Adicionado o Scroll suave
 function scrollSuave() {
   const navMenu = document.querySelectorAll('.js-menu a[href^="#"]');
   function scrollMenu(event) {
@@ -16,8 +17,7 @@ function scrollSuave() {
 }
 scrollSuave();
 
-
-
+// Adicionado animação ao iniciar
 function initAnimacaoScroll() {
   const sectionScroll = document.querySelectorAll(".js-scroll");
   if (sectionScroll.length) {
@@ -33,4 +33,4 @@ function initAnimacaoScroll() {
     window.addEventListener("scroll", animaScroll);
   }
 }
-initAnimacaoScroll(); 
+initAnimacaoScroll();
