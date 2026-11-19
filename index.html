@@ -1,170 +1,304 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio profissional de Douglas Rodrigues, Desenvolvedor Front-End especializado em Vue.js, Nuxt e JavaScript." />
+    <link
+      rel="icon"
+      href="./favicon.svg"
+      type="image/svg+xml" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <script>
+      document.documentElement.className += " js";
+    </script>
+    <link
+      rel="stylesheet"
+      href="./css/style.css" />
+    <title>Douglas Rodrigues | Desenvolvedor Front-End</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Desenvolvedor  Front End &  UI/UX Designer Localizado em Campinas">
-  <link rel=" icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <script>
-    document.documentElement.className += 'js' 
-  </script>
-  <link rel="stylesheet" href="./css/style.css">
-  <title> Douglas - Desenvolvedor Front End Júnior</title>
-</head>
-
-<body>
-  <Header class="header">
-    <img src="./img/marca.svg" alt="Douglas" width="104" height="38">
-    <nav>
-      <ul class="header_menu js-menu">
-        <li> <a href="#experiencia"> Experiência</a></li>
-        <li> <a href="#formacao"> Formação</a></li>
-        <li> <a href="#contato"> Contato</a></li>
-
-      </ul>
-    </nav>
-  </Header>
-  <main class="introducao">
-    <img src="./img/perfil.jpg" alt="Douglas" width="360" height="520">
-    <div>
-      <h1 data="typeWriter">
-        Desenvolvedor Front End Júnior
-      </h1>
-      <p> Localizado em Campinas-SP </p>
-    </div>
-
-  </main>
-
-  <section class="experiencia js-scroll" id="experiencia" aria-label="Experiência">
-    <h2 class="subtitulo"> Experiência</h2>
-    <div>
-      <p class="experiencia_texto">
-        Desenvolvo projetos ultilizando as tecnologias <strong> HTML</strong>,<strong>CSS</strong>, <strong>Bootstrap</strong>, <strong>JavaScript </strong> e <strong>React</strong>. Tenho conhecimento em <strong> GIT </strong> e faço o desenvolvimento do layout utilizando o <strong> Figma</strong>.
-      </p>
-
-
-
-
-      <div class="empresa">
-        <h3 class="empresa_titulo"> <a href="https://douglasrodriguesgit.github.io/marina-fiori/">Marina Fiori</h3></a>
-        <span class="empresa_titulo">Tecnologias</span>
-        <p class="empresa_texto"> O protótipo do projeto foi realizado através do Figma, e escolhida uma paleta de cores "candy-colors". No desenvolvimento foi utilizado React com JavaScript e na estilização CSS puro. Ultilizei react router dom no menu, foi consumida a API do google Maps no footer e utilizado os hooks useRef e useState no desenvolvimento do slide de depoimentos e do menu mobile.
-          Na página de portfólio, nesse slide optei em utilizar a biblioteca Swiper.
-        </p>
-        <ul class="empresa_habilidade">
-          <li>React </li>
-          <li>JavaScript</li>
-          <li>CSS</li>
-          <li>GIT</li>
-          <li>Figma</li>
-          <li>UX Design </li>
-          <li>UI Design </li>
-        </ul>
-      </div>
-
-      <div class="empresa">
-
-        <h3 class="empresa_titulo"> <a href="https://douglasrodriguesgit.github.io/joe-gardner/"> Joe Gardner </h3></a>
-        <span class="empresa_titulo">Tecnologias</span>
-        <p class="empresa_texto">Joe Gardner é um site que foi desenvolvido, com a função de captar novos clientes e realizar o agendamento. Prototipado no Figma, e utilizado as tipográfias Poppins e Roboto. Apesar de ser "Preto e Branco" foi utilizado uma paleta de 14 cores com variação do branco ao preto. Em seu desenvolvimento o formulário foi utilizado o formsubit, para o envio do e-mail. No piano, menu mobile e na tela de apresentação foi utilizado JS Vanilla.
-
-        </p>
-        <ul class="empresa_habilidade">
-          <li>HTML </li>
-          <li>CSS </li>
-          <li>JavaScript </li>
-          <li>Figma </li>
-          <li>UX Design </li>
-          <li>UI Design </li>
-
-        </ul>
-      </div>
-
-
-
-      <div class="empresa">
-
-        <h3 class="empresa_titulo"> <a href="https://douglasrodriguesgit.github.io/dogs/"> Dogs </h3></a>
-        <span class="empresa_titulo">Tecnologias</span>
-        <p class="empresa_texto"> O aplicativo Dogs é uma rede social para cachorros, no aplivcativo é possível realizar o cadastro, realizar comentários, postar e deletar fotos realizar a verificação do gráfico de desempenho da performance. Nesse projeto foi utilizado para a realização do login autenticação via json web token, foi consumida a API para a relização de criação de usuário, validação de formulário e postagem das fotos.
-        </p>
-        <ul class="empresa_habilidade">
-          <li>React</li>
-          <li>JavaScript </li>
-          <li>CSS </li>
-          <li>GIT </li>
-
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="formacao js-scroll" id="formacao" aria-label="Formação">
-    <div class="formacao_container">
-      <h2 class="subtitulo"> Formação</h2>
-      <div>
-        <p class="formacao_texto"> Continuo aprimorando o meu conhecimento e hoje venho estudando <strong>TypeScript</strong> e <strong>PHP</strong>.
-        </p>
-
-        <ul class="faculdade_lista">
-          <li class="faculdade">
-            <span class="faculdade_tipo"> Bacharel</span>
-            <h3 class="faculdade_curso"> Administração de Empresas </h3>
-            <span class="faculdade_instituicao"> Anhanguera</span>
+  <body>
+    <div
+      class="site_wrap"
+      id="inicio">
+      <header class="header">
+        <a
+          href="#inicio"
+          class="brand"
+          ><span>Douglas Rodrigues</span></a
+        >
+        <nav aria-label="Navegação principal">
+          <ul class="header_menu js-menu">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <ul
+          class="header_social"
+          aria-label="Redes sociais">
+          <li>
+            <a
+              href="https://github.com/douglasrodriguesgit"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false">
+                <path
+                  d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.73c-2.78.6-3.37-1.19-3.37-1.19-.45-1.15-1.11-1.45-1.11-1.45-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.47 9.47 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.33 4.69-4.56 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" />
+              </svg>
+              <span class="sr_only">GitHub</span>
+            </a>
           </li>
-
-
-
-          <li class="faculdade">
-            <span class="faculdade_tipo"> Curso Intensivo</span>
-            <h3 class="faculdade_curso"> Desenvolvimento Front End </h3>
-            <span class="faculdade_instituicao"> Origamid</span>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/douglas-rodrigues-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false">
+                <path
+                  d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12zM5.5 9.75h2.9V19H5.5V9.75zm4.72 0H13v1.26h.04c.38-.72 1.3-1.48 2.67-1.48 2.86 0 3.39 1.88 3.39 4.33V19h-2.9v-4.56c0-1.09-.02-2.5-1.52-2.5-1.52 0-1.75 1.19-1.75 2.42V19h-2.9V9.75z" />
+              </svg>
+              <span class="sr_only">LinkedIn</span>
+            </a>
           </li>
         </ul>
+      </header>
 
-        <div class="extra">
-          <div class="cursos">
-            <h3> Cursos</h3>
-            <ul>
-              <li> UX Design & UI Design </li>
-              <li> Web Design </li>
-            </ul>
-
-          </div>
-          <div class="idioma">
-            <h3> Idioma</h3>
-            <ul>
-              <li> Cursando Ingles - <span> Mairo Vergara </span></li>
-            </ul>
+      <main
+        class="introducao"
+        aria-label="Apresentação">
+        <div class="hero_content">
+          <p class="hero_intro">Desenvolvedor Front-End em Campinas, SP</p>
+          <h1 data="typeWriter">
+            Interfaces modernas para produtos digitais em escala real
+          </h1>
+          <p>
+            Desenvolvedor Front-End com foco em Vue.js, Nuxt e JavaScript,
+            construindo interfaces modernas, responsivas e bem estruturadas para
+            produtos digitais de alto impacto.
+          </p>
+          <div class="intro_actions">
+            <a
+              class="btn btn_primary"
+              href="#contato"
+              >Falar comigo</a
+            >
+            <a
+              class="btn btn_secondary"
+              href="https://github.com/douglasrodriguesgit"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver projetos</a
+            >
           </div>
         </div>
-      </div>
+      </main>
+
+      <section
+        class="about_section"
+        id="sobre"
+        aria-label="Sobre mim">
+        <div class="about_title_wrap">
+          <h2 class="about_title">About Me</h2>
+        </div>
+        <div class="about_grid">
+          <div>
+            <p>
+              Atualmente, atuo na Agência Delucca, integrando o time de
+              Front-End da Growth Supplements, trabalhando no desenvolvimento e
+              evolução de interfaces para um dos maiores e-commerces do Brasil.
+            </p>
+            <p>
+              Minha atuação envolve Vue.js, Nuxt e JavaScript, além de projetos
+              com WordPress e PHP. Trabalho na implementação de layouts e
+              componentes, integração com APIs, manutenção e evolução de
+              projetos, transformando requisitos e designs em experiências
+              digitais consistentes.
+            </p>
+          </div>
+          <div class="about_image_wrap">
+            <img
+              src="./img/perfil.jpg"
+              alt="Retrato de Douglas Rodrigues"
+              width="360"
+              height="520" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="experiencia"
+        id="experiencia"
+        aria-label="Experiência profissional">
+        <div class="section_heading">
+          <p class="section_kicker">Experiência</p>
+          <h2 class="subtitulo">Projeto, produto e execução</h2>
+        </div>
+        <div class="exp_grid">
+          <article class="exp_item exp_item_featured">
+            <h3>Agência Delucca + Growth Supplements</h3>
+            <p>
+              Implementação e evolução contínua de interfaces para e-commerce em
+              larga escala, alinhando qualidade visual, performance e
+              consistência de experiência em múltiplas jornadas.
+            </p>
+            <ul>
+              <li>Arquitetura de componentes</li>
+              <li>Integração de APIs</li>
+              <li>Manutenção evolutiva</li>
+            </ul>
+          </article>
+
+          <article class="exp_item">
+            <h3>Vue.js, Nuxt e JavaScript no dia a dia</h3>
+            <p>
+              Construção de interfaces funcionais, responsivas e sustentáveis,
+              transformando requisitos de negócio em código organizado e
+              escalável.
+            </p>
+          </article>
+
+          <article class="exp_item">
+            <h3>WordPress, ACF e PHP</h3>
+            <p>
+              Desenvolvimento e manutenção de projetos institucionais e
+              comerciais, com foco em edição facilitada, estrutura sólida e
+              entrega consistente.
+            </p>
+          </article>
+
+          <article class="exp_item">
+            <h3>Fluxo design para código</h3>
+            <p>
+              Uso de Figma e Adobe XD para traduzir layouts em interfaces fiéis
+              ao design, preservando hierarquia visual, acessibilidade e
+              usabilidade.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="formacao"
+        id="stack"
+        aria-label="Stack e práticas">
+        <div class="section_heading">
+          <p class="section_kicker">Stack e Fluxo</p>
+          <h2 class="subtitulo">Tecnologia com direção</h2>
+        </div>
+
+        <div class="stack_layout">
+          <article class="stack_block">
+            <h3>Tecnologias</h3>
+            <ul class="chip_list">
+              <li>JavaScript</li>
+              <li>Vue.js</li>
+              <li>Nuxt</li>
+              <li>WordPress</li>
+              <li>ACF</li>
+              <li>PHP</li>
+            </ul>
+          </article>
+
+          <article class="stack_block">
+            <h3>Ferramentas</h3>
+            <ul class="chip_list">
+              <li>Git</li>
+              <li>GitHub Copilot</li>
+              <li>Figma</li>
+              <li>Adobe XD</li>
+              <li>IA aplicada</li>
+            </ul>
+          </article>
+
+          <article class="stack_block wide">
+            <h3>Prática profissional</h3>
+            <p>
+              Busco evoluir continuamente minhas práticas de desenvolvimento com
+              foco em código organizado, componentes reutilizáveis, UX
+              consistente e soluções sustentáveis. Também aplico IA para
+              análise, documentação e automação de tarefas repetitivas, mantendo
+              validação técnica e responsabilidade nas decisões.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <footer
+        class="footer"
+        id="contato">
+        <div class="footer_top">
+          <h2>Vamos construir algo forte para o seu produto?</h2>
+          <p>
+            Disponível para oportunidades e projetos em Front-End. Se você busca
+            interface profissional, escalável e com visão de produto, vamos
+            conversar.
+          </p>
+        </div>
+
+        <ul class="footer_contato">
+          <li>
+            <a href="mailto:douglasrodrigues.git@gmail.com"
+              >douglasrodrigues.git@gmail.com</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://wa.me/5519988006300"
+              target="_blank"
+              rel="noopener noreferrer"
+              >+55 19 98800-6300</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/douglas-rodrigues-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/douglasrodriguesgit"
+              target="_blank"
+              rel="noopener noreferrer"
+              >github.com/douglasrodriguesgit</a
+            >
+          </li>
+        </ul>
+
+        <p class="footer_copy">
+          Douglas Rodrigues. Alguns direitos reservados.
+        </p>
+      </footer>
     </div>
-  </section>
 
-  <footer class="footer js-scroll" id="contato">
-    <div class="footer_container">
-      <p class="footer_texto">Estou disponível para novos
-        projetos no momento. Entre em contato comigo e marcamos uma conversa.</p>
-
-      <ul class="footer_contato">
-        <li>douglasrodrigues.git@gmail.com</li>
-        <li> <a href="https://wa.me/5519988006300"> +55 19 98800-6300</li> </a>
-        <li class="redes"><a href="https://www.linkedin.com/in/douglas-rodrigues-dev/ ">LinkedIn</a></li>
-        <li class="redes"> conheça meu <a href="https://github.com/douglasrodriguesgit">GitHub </li>
-      </ul>
-      <p class="footer_copy"> Douglas. Alguns direitos reservados </p>
-    </div>
-
-  </footer>
-
-
-</body>
-<script type="module" src="./js/script.js"></script>
-
+    <script
+      type="module"
+      src="./js/script.js"></script>
+  </body>
 </html>

@@ -1,52 +1,78 @@
 .footer {
-  background: #000000;
+  background: linear-gradient(140deg, #f7f9ff 0%, #eef3ff 60%, #ecf7ff 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid #d7e1f7;
+  padding: 54px 32px 22px;
+  color: var(--text);
 }
 
-.footer_container {
-  max-width: 1200px;
-  padding: 120px 20px 60px 20px;
-  margin: 0 auto;
+.footer_top {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  position: relative;
 }
 
-.footer_texto {
-  font-size: 1.5rem;
-  line-height: 1.33rem;
-  color: #cccccc;
+.footer_top::before {
+  content: "";
+  width: 76px;
+  height: 4px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
 }
 
-.footer_contato li {
-  font-size: 2.5rem;
-  color: #ffffff;
-  font-weight: bold;
-  line-height: 1.1;
-  margin-bottom: 30px;
+.footer_top h2 {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  line-height: 1.2;
 }
+
+.footer_top p {
+  color: var(--text-soft);
+  line-height: 1.8;
+  max-width: 70ch;
+  font-size: 0.98rem;
+}
+
+.footer_contato {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
 .footer_contato li a {
-  color: #ffffff;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid #cfdaf4;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 14px;
+  color: #1f2f57;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.93rem;
+  transition: all 0.2s ease;
 }
 
-.footer_contato img{
-  display: inline-block;
-  width: 40px;
-  height: 40px;
+.footer_contato li a:hover {
+  border-color: #b5c8f7;
+  background: #ffffff;
+  color: var(--primary-strong);
 }
 
 .footer_copy {
-  font-size: 1.125rem;
-  color: #8f8f8f;
-  grid-column: 1 /-1;
+  font-size: 0.8rem;
+  color: #7785ad;
+  border-top: 1px solid #d3def6;
+  padding-top: 16px;
+  margin-top: 20px;
 }
 
 @media (max-width: 800px) {
-  .footer_container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .footer {
+    padding: 30px 20px 16px;
   }
-  .footer_contato li {
-    font-size: 1.5rem;
+
+  .footer_contato {
+    grid-template-columns: 1fr;
   }
 }

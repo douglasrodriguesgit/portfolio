@@ -1,5 +1,7 @@
 export default function initTypeWriter() {
   const titulo = document.querySelector('[data="typeWriter"]');
+  if (!titulo) return;
+
   function typeWriter(element) {
     const tituloArray = element.innerHTML.split("");
     element.innerHTML = "";
@@ -11,4 +13,3 @@ export default function initTypeWriter() {
   }
   typeWriter(titulo);
 }
-
