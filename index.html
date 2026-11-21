@@ -10,7 +10,7 @@
       content="Portfolio profissional de Douglas Rodrigues, Desenvolvedor Front-End especializado em Vue.js, Nuxt e JavaScript." />
     <link
       rel="icon"
-      href="./favicon.svg"
+      href="./img/favicon.svg"
       type="image/svg+xml" />
     <link
       rel="preconnect"
@@ -36,12 +36,15 @@
       class="site_wrap"
       id="inicio">
       <header class="header">
-        <a
-          href="#inicio"
-          class="brand"
-          ><span>Douglas Rodrigues</span></a
-        >
-        <nav aria-label="Navegação principal">
+        <div class="brand">
+          <img class="brand_mark" src="./img/code.svg" alt="" aria-hidden="true" />
+          <span class="brand_name">Douglas Rodrigues</span>
+        </div>
+        <button class="menu_toggle" type="button" aria-expanded="false" aria-controls="main_navigation">
+          <span class="sr_only">Abrir menu</span>
+          <span class="menu_toggle_icon" aria-hidden="true"></span>
+        </button>
+        <nav id="main_navigation" aria-label="Navegação principal">
           <ul class="header_menu js-menu">
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#experiencia">Experiência</a></li>
@@ -159,21 +162,35 @@
         </div>
         <div class="exp_grid">
           <article class="exp_item exp_item_featured">
-            <h3>Agência Delucca + Growth Supplements</h3>
-            <p>
-              Implementação e evolução contínua de interfaces para e-commerce em
-              larga escala, alinhando qualidade visual, performance e
-              consistência de experiência em múltiplas jornadas.
-            </p>
-            <ul>
-              <li>Arquitetura de componentes</li>
-              <li>Integração de APIs</li>
-              <li>Manutenção evolutiva</li>
-            </ul>
+            <div class="exp_brand exp_brand_delucca" aria-hidden="true">
+              <img class="exp_logo_delucca" src="./img/logo-deluca.svg" alt="" />
+            </div>
+            <div class="exp_featured_content">
+              <h3>
+                <a href="https://www.agenciadelucca.com.br/" target="_blank" rel="noopener noreferrer">Agência Delucca</a>
+                +
+                <a href="https://www.gsuplementos.com.br/" target="_blank" rel="noopener noreferrer">Growth Supplements</a>
+              </h3>
+              <p>
+                Implementação e evolução contínua de interfaces para e-commerce em
+                larga escala, alinhando qualidade visual, performance e
+                consistência de experiência em múltiplas jornadas.
+              </p>
+              <ul>
+                <li>Arquitetura de componentes</li>
+                <li>Integração de APIs</li>
+                <li>Manutenção evolutiva</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="exp_item">
-            <h3>Vue.js, Nuxt e JavaScript no dia a dia</h3>
+          <article class="exp_item exp_item_reveal">
+            <div class="exp_card_heading">
+              <div class="exp_brand exp_brand_vue" aria-hidden="true">
+                <img src="./img/icon-vue.svg" alt="" />
+              </div>
+              <h3>Vue.js, Nuxt e JavaScript no dia a dia</h3>
+            </div>
             <p>
               Construção de interfaces funcionais, responsivas e sustentáveis,
               transformando requisitos de negócio em código organizado e
@@ -181,8 +198,13 @@
             </p>
           </article>
 
-          <article class="exp_item">
-            <h3>WordPress, ACF e PHP</h3>
+          <article class="exp_item exp_item_reveal">
+            <div class="exp_card_heading">
+              <div class="exp_brand exp_brand_wp" aria-hidden="true">
+                <img src="./img/icon-wordpress.svg" alt="" />
+              </div>
+              <h3>WordPress, ACF e PHP</h3>
+            </div>
             <p>
               Desenvolvimento e manutenção de projetos institucionais e
               comerciais, com foco em edição facilitada, estrutura sólida e
@@ -190,8 +212,13 @@
             </p>
           </article>
 
-          <article class="exp_item">
-            <h3>Fluxo design para código</h3>
+          <article class="exp_item exp_item_reveal">
+            <div class="exp_card_heading">
+              <div class="exp_brand exp_brand_figma" aria-hidden="true">
+                <img src="./img/icon-figma.svg" alt="" />
+              </div>
+              <h3>Fluxo design para código</h3>
+            </div>
             <p>
               Uso de Figma e Adobe XD para traduzir layouts em interfaces fiéis
               ao design, preservando hierarquia visual, acessibilidade e
@@ -251,11 +278,9 @@
         class="footer"
         id="contato">
         <div class="footer_top">
-          <h2>Vamos construir algo forte para o seu produto?</h2>
+          <h2>Vamos conversar sobre seu próximo projeto?</h2>
           <p>
-            Disponível para oportunidades e projetos em Front-End. Se você busca
-            interface profissional, escalável e com visão de produto, vamos
-            conversar.
+            Estou aberto a oportunidades e novos projetos em Front-End. Se você procura alguém para transformar ideias e requisitos em interfaces modernas, responsivas e bem estruturadas, vamos conversar.
           </p>
         </div>
 
@@ -291,9 +316,13 @@
           </li>
         </ul>
 
-        <p class="footer_copy">
-          Douglas Rodrigues. Alguns direitos reservados.
-        </p>
+        <div class="footer_copy">
+          <span class="footer_brand">
+            <img class="footer_mark" src="./img/code.svg" alt="" aria-hidden="true" />
+            <strong>Douglas Rodrigues</strong>
+          </span>
+          <span class="footer_rights">© <span class="js_current_year">2026</span>. Todos os direitos reservados.</span>
+        </div>
       </footer>
     </div>
 

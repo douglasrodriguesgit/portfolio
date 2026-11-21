@@ -76,11 +76,15 @@ img {
   width: 88px;
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background: linear-gradient(
+    90deg,
+    rgba(250, 204, 21, 0.95),
+    rgba(250, 204, 21, 0.3)
+  );
 }
 
 .section_kicker {
-  font-size: 0.78rem;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-weight: 700;
@@ -89,7 +93,7 @@ img {
 
 .subtitulo {
   font-family: "Sora", sans-serif;
-  font-size: clamp(2rem, 4.1vw, 3.6rem);
+  font-size: clamp(32px, 4vw, 56px);
   line-height: 1.08;
   letter-spacing: -0.04em;
   max-width: 16ch;
@@ -102,14 +106,10 @@ img {
   justify-content: center;
   border-radius: 999px;
   padding: 13px 24px;
-  font-size: 0.94rem;
+  font-size: 16px;
   font-weight: 700;
   border: 1px solid transparent;
   transition: all 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
 }
 
 .btn_primary {
@@ -147,6 +147,7 @@ img {
 
 @media (max-width: 900px) {
   .site_wrap {
-    width: calc(100% - 20px);
+    width: 100%;
+    padding: 16px;
   }
 }

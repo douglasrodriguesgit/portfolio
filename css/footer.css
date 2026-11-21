@@ -18,12 +18,16 @@
   width: 76px;
   height: 4px;
   border-radius: 99px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background: linear-gradient(
+    90deg,
+    rgba(250, 204, 21, 0.95),
+    rgba(250, 204, 21, 0.3)
+  );
 }
 
 .footer_top h2 {
   font-family: "Sora", sans-serif;
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-size: clamp(24px, 3vw, 40px);
   line-height: 1.2;
 }
 
@@ -31,7 +35,7 @@
   color: var(--text-soft);
   line-height: 1.8;
   max-width: 70ch;
-  font-size: 0.98rem;
+  font-size: 16px;
 }
 
 .footer_contato {
@@ -49,22 +53,43 @@
   color: #1f2f57;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.93rem;
+  font-size: 16px;
   transition: all 0.2s ease;
 }
 
 .footer_contato li a:hover {
   border-color: #b5c8f7;
   background: #ffffff;
-  color: var(--primary-strong);
+  color: var(--primary);
 }
 
 .footer_copy {
-  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 15px;
   color: #7785ad;
   border-top: 1px solid #d3def6;
   padding-top: 16px;
   margin-top: 20px;
+}
+
+.footer_brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+}
+
+.footer_mark {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
+.footer_rights {
+  padding-left: 28px;
+  border-left: 1px solid #c8d1e8;
 }
 
 @media (max-width: 800px) {
@@ -74,5 +99,16 @@
 
   .footer_contato {
     grid-template-columns: 1fr;
+  }
+
+  .footer_copy {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer_rights {
+    padding-left: 0;
+    border-left: 0;
   }
 }

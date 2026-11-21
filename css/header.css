@@ -11,15 +11,28 @@
   text-decoration: none;
   color: var(--text);
   font-family: "Sora", sans-serif;
-  font-size: 1.05rem;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.brand span {
+.brand_name {
   display: inline-block;
   border-bottom: 2px solid var(--accent);
   line-height: 1.1;
+}
+
+.brand_mark {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
+.menu_toggle {
+  display: none;
 }
 
 .header_menu {
@@ -30,22 +43,38 @@
 }
 
 .header_menu a {
-  font-size: 0.87rem;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
   padding: 10px 16px;
-  border: 1px solid transparent;
-  border-radius: 10px;
   text-decoration: none;
   color: var(--text-soft);
   display: block;
-  transition: all 0.22s ease;
+  position: relative;
+  transition: color 0.22s ease;
 }
 
-.header_menu a:hover {
+.header_menu a::after {
+  content: "";
+  height: 2px;
+  background: #facc15;
+  position: absolute;
+  bottom: 4px;
+  right: 16px;
+  left: 16px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s ease;
+}
+
+.header_menu a:hover,
+.header_menu a:focus-visible {
   color: var(--text);
-  background: #ffffff;
-  border-color: var(--line);
+}
+
+.header_menu a:hover::after,
+.header_menu a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .header_social {
@@ -55,8 +84,8 @@
 }
 
 .header_social a {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -65,36 +94,122 @@
   background: #15192b;
   border: 1px solid transparent;
   transition:
-    transform 0.2s ease,
+    color 0.2s ease,
     background-color 0.2s ease,
     border-color 0.2s ease;
 }
 
 .header_social svg {
-  width: 18px;
-  height: 18px;
+  width: 32px;
+  height: 32px;
   fill: currentColor;
 }
 
 .header_social a:hover {
-  transform: translateY(-2px);
-  background: #222b48;
-  border-color: rgba(250, 204, 21, 0.4);
+  color: #15192b;
+  background: #f4f6ff;
+  border-color: #15192b;
 }
 
 @media (max-width: 800px) {
   .header {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
     padding-top: 12px;
   }
 
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .menu_toggle {
+    grid-column: 2;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    color: var(--text);
+    background: var(--surface);
+    cursor: pointer;
+  }
+
+  .menu_toggle_icon,
+  .menu_toggle_icon::before,
+  .menu_toggle_icon::after {
+    width: 20px;
+    height: 2px;
+    border-radius: 99px;
+    background: currentColor;
+    transition: transform 0.2s ease;
+  }
+
+  .menu_toggle_icon {
+    position: relative;
+  }
+
+  .menu_toggle_icon::before,
+  .menu_toggle_icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .menu_toggle_icon::before {
+    top: -6px;
+  }
+
+  .menu_toggle_icon::after {
+    top: 6px;
+  }
+
+  .header nav {
+    grid-column: 1 / -1;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  .header.menu_open nav {
+    max-height: 260px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header.menu_open .menu_toggle_icon {
+    background: transparent;
+  }
+
+  .header.menu_open .menu_toggle_icon::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .header.menu_open .menu_toggle_icon::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
   .header_menu {
-    justify-content: center;
-    gap: 6px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding-top: 4px;
   }
 
   .header_menu a {
+    padding: 14px 16px;
     background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .header_social {
+    grid-column: 1 / -1;
+    justify-self: start;
   }
 }
