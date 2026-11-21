@@ -4,9 +4,9 @@ export default function initScrollSuave() {
     event.preventDefault();
     const href = event.currentTarget.getAttribute("href");
     const menu = document.querySelector(href);
-    menu.scrollIntoView({
+    window.scrollTo({
+      top: menu.getBoundingClientRect().top + window.scrollY - 60,
       behavior: "smooth",
-      block: "start",
     });
   }
   navMenu.forEach((link) => {

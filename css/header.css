@@ -1,46 +1,215 @@
 .header {
-  max-width: 1200px;
-  padding: 40px 20px;
-  margin: 0 auto;
+  width: 100%;
+  padding: 18px 8px 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand_name {
+  display: inline-block;
+  border-bottom: 2px solid var(--accent);
+  line-height: 1.1;
+}
+
+.brand_mark {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
+.menu_toggle {
+  display: none;
 }
 
 .header_menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 2px;
   justify-content: center;
 }
 
 .header_menu a {
-  font-size: 1.125rem;
-  line-height: 1.3rem;
-  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 10px 16px;
   text-decoration: none;
-  color: #141414;
+  color: var(--text-soft);
   display: block;
+  position: relative;
+  transition: color 0.22s ease;
 }
+
+.header_menu a::after {
+  content: "";
+  height: 2px;
+  background: #facc15;
+  position: absolute;
+  bottom: 4px;
+  right: 16px;
+  left: 16px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s ease;
+}
+
+.header_menu a:hover,
+.header_menu a:focus-visible {
+  color: var(--text);
+}
+
+.header_menu a:hover::after,
+.header_menu a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.header_social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header_social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #f4f6ff;
+  background: #15192b;
+  border: 1px solid transparent;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.header_social svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.header_social a:hover {
+  color: #15192b;
+  background: #f4f6ff;
+  border-color: #15192b;
+}
+
 @media (max-width: 800px) {
   .header {
-    flex-direction: column;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    padding-top: 12px;
   }
 
-  .header a {
-    background-color: #f5f5f5;
-    border-radius: 5px;
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
   }
-}
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
+  .menu_toggle {
+    grid-column: 2;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    color: var(--text);
+    background: var(--surface);
+    cursor: pointer;
+  }
+
+  .menu_toggle_icon,
+  .menu_toggle_icon::before,
+  .menu_toggle_icon::after {
+    width: 20px;
+    height: 2px;
+    border-radius: 99px;
+    background: currentColor;
+    transition: transform 0.2s ease;
+  }
+
+  .menu_toggle_icon {
+    position: relative;
+  }
+
+  .menu_toggle_icon::before,
+  .menu_toggle_icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .menu_toggle_icon::before {
+    top: -6px;
+  }
+
+  .menu_toggle_icon::after {
+    top: 6px;
+  }
+
+  .header nav {
+    grid-column: 1 / -1;
     max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
   }
-  to {
+
+  .header.menu_open nav {
+    max-height: 260px;
     opacity: 1;
-    max-width: 200px;
+    pointer-events: auto;
+  }
+
+  .header.menu_open .menu_toggle_icon {
+    background: transparent;
+  }
+
+  .header.menu_open .menu_toggle_icon::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .header.menu_open .menu_toggle_icon::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .header_menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding-top: 4px;
+  }
+
+  .header_menu a {
+    padding: 14px 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .header_social {
+    grid-column: 1 / -1;
+    justify-self: start;
   }
 }
