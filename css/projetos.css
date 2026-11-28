@@ -1,0 +1,562 @@
+.projetos {
+  padding: 64px 0;
+}
+
+.projects_head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.projects_counter {
+  display: none;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 32px;
+  font-family: "Sora", sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.js .projects_counter {
+  display: flex;
+}
+
+.js_projects_current {
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.9;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--text);
+}
+
+.projects_counter_total {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-soft);
+  letter-spacing: 0;
+}
+
+/* ---------- Card do projeto (mídia) ---------- */
+
+.project_media {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.project_browser {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #ffffff 0%, var(--surface-soft) 100%);
+  flex-shrink: 0;
+}
+
+.project_dots {
+  display: flex;
+  gap: 6px;
+}
+
+.project_dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.project_dots i:first-child {
+  background: var(--accent);
+}
+
+.project_url {
+  flex: 1;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project_screen {
+  display: block;
+  aspect-ratio: 1550 / 719;
+  overflow: hidden;
+  background: var(--surface-soft);
+}
+
+.project_screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Informações ---------- */
+
+.project_index {
+  font-family: "Sora", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--primary-strong);
+}
+
+.project_name {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.project_desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.project_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project_tags li {
+  border-radius: 999px;
+  border: 1px solid #cad8f9;
+  background: #edf3ff;
+  color: #244089;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project_link {
+  justify-self: start;
+  gap: 8px;
+}
+
+.project_info {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+/* ---------- Sem JS: lista horizontal com scroll ---------- */
+
+.projects_track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(560px, 85%);
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+}
+
+.project_slide {
+  display: grid;
+  gap: 20px;
+  scroll-snap-align: start;
+}
+
+.projects_controls {
+  display: none;
+}
+
+/* ---------- Com JS: slider em baralho ---------- */
+
+.js .projects_slider {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.6fr);
+  grid-template-areas:
+    "details stage"
+    "controls controls";
+  gap: 40px 56px;
+  align-items: center;
+}
+
+.projects_details {
+  grid-area: details;
+  display: none;
+}
+
+.js .projects_details {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+}
+
+.js .projects_details::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 99px;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 204, 21, 0.95),
+    rgba(250, 204, 21, 0.1)
+  );
+}
+
+.projects_details .project_info > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects_details.is_in .project_info > * {
+  opacity: 1;
+  transform: none;
+}
+
+.projects_details.is_in .project_info > :nth-child(2) {
+  transition-delay: 0.06s;
+}
+
+.projects_details.is_in .project_info > :nth-child(3) {
+  transition-delay: 0.12s;
+}
+
+.projects_details.is_in .project_info > :nth-child(4) {
+  transition-delay: 0.18s;
+}
+
+.projects_details.is_in .project_info > :nth-child(5) {
+  transition-delay: 0.24s;
+}
+
+.js .projects_stage {
+  grid-area: stage;
+  position: relative;
+  /* espaço para as cartas de trás aparecerem acima e à direita */
+  padding-top: 8%;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.js .projects_track {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-flow: row;
+  gap: 0;
+  position: relative;
+  overflow: visible;
+  scroll-snap-type: none;
+  padding: 0;
+}
+
+.js .project_slide {
+  grid-area: 1 / 1;
+  align-self: end;
+  position: relative;
+  width: 86%;
+  display: block;
+  transform-origin: left bottom;
+  transition:
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease,
+    filter 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.js .project_slide .project_info {
+  display: none;
+}
+
+.js .project_slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* posições do baralho */
+.js .project_slide[data-pos="0"] {
+  z-index: 5;
+  transform: none;
+}
+
+.js .project_slide[data-pos="1"] {
+  z-index: 4;
+  transform: translate(8%, -8%) scale(0.94);
+}
+
+.js .project_slide[data-pos="2"] {
+  z-index: 3;
+  transform: translate(15%, -15%) scale(0.88);
+}
+
+.js .project_slide[data-pos="1"]::after {
+  opacity: 0.45;
+}
+
+.js .project_slide[data-pos="2"]::after {
+  opacity: 0.7;
+}
+
+.js .project_slide[data-pos="hidden"] {
+  z-index: 2;
+  opacity: 0;
+  transform: translate(20%, -20%) scale(0.84);
+  pointer-events: none;
+}
+
+.js .project_slide[data-pos="out"] {
+  z-index: 6;
+  opacity: 0;
+  transform: translate(-18%, 6%) rotate(-7deg) scale(0.96);
+  pointer-events: none;
+}
+
+.js .project_slide:not([data-pos="0"]) .project_media {
+  box-shadow: var(--shadow-md);
+}
+
+.js .project_slide[data-pos="1"],
+.js .project_slide[data-pos="2"] {
+  cursor: pointer;
+}
+
+@media (hover: hover) and (min-width: 901px) {
+  .js .project_slide[data-pos="1"]:hover {
+    transform: translate(9.5%, -9.5%) scale(0.94);
+  }
+}
+
+.js .project_slide[data-pos="0"] .project_media:hover .project_screen img,
+.js
+  .project_slide[data-pos="0"]
+  .project_media:focus-visible
+  .project_screen
+  img {
+  transform: scale(1.035);
+}
+
+.js .projects_stage.is_dragging .project_slide {
+  transition: none;
+}
+
+/* ---------- Controles ---------- */
+
+.js .projects_controls {
+  grid-area: controls;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.projects_progress {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.projects_progress button {
+  flex: 1;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.projects_progress button::before,
+.projects_progress button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 99px;
+}
+
+.projects_progress button::before {
+  background: var(--line);
+  transition: background 0.2s ease;
+}
+
+.projects_progress button::after {
+  background: linear-gradient(90deg, var(--primary), rgba(37, 99, 235, 0.35));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects_progress button:hover::before {
+  background: var(--line-strong);
+}
+
+.projects_progress button[aria-current="true"]::after {
+  transform: scaleX(1);
+}
+
+.projects_progress button:focus-visible,
+.projects_arrow:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.projects_arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.projects_arrow {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.projects_arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.projects_arrow:hover {
+  border-color: var(--primary);
+  color: var(--primary-strong);
+}
+
+.js_projects_next {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #f9fbff;
+  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.24);
+}
+
+.js_projects_next:hover {
+  background: var(--primary-strong);
+  border-color: var(--primary-strong);
+  color: #f9fbff;
+}
+
+.js_projects_next:focus-visible,
+.js_projects_prev:focus-visible {
+  border-radius: 50%;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 900px) {
+  .js .projects_slider {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "stage"
+      "controls"
+      "details";
+    gap: 28px;
+  }
+
+  /* no mobile o card ocupa a largura toda (como os cards de experiência)
+     e as cartas de trás aparecem empilhadas para cima */
+  .js .projects_stage {
+    padding-top: 10%;
+  }
+
+  .js .project_slide {
+    width: 100%;
+    transform-origin: center bottom;
+  }
+
+  .js .project_screen {
+    aspect-ratio: 3 / 2;
+  }
+
+  .js .project_slide[data-pos="1"] {
+    transform: translateY(-12%) scale(0.94);
+  }
+
+  .js .project_slide[data-pos="2"] {
+    transform: translateY(-24%) scale(0.88);
+  }
+
+  .js .project_slide[data-pos="hidden"] {
+    transform: translateY(-28%) scale(0.84);
+  }
+}
+
+@media (max-width: 800px) {
+  .projetos {
+    padding: 32px 0;
+  }
+
+  .projects_counter {
+    margin-bottom: 32px;
+  }
+
+  .project_browser {
+    padding: 9px 12px;
+    gap: 10px;
+  }
+
+  .project_dots i {
+    width: 8px;
+    height: 8px;
+  }
+
+  .projects_arrow {
+    width: 46px;
+    height: 46px;
+  }
+
+  .js .projects_controls {
+    gap: 16px;
+  }
+
+  .project_screen img {
+    object-position: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .project_slide,
+  .js .project_slide::after,
+  .project_screen img,
+  .projects_details .project_info > *,
+  .projects_progress button::after {
+    transition: none;
+  }
+}
